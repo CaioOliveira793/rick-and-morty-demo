@@ -11,7 +11,11 @@ interface Character {
 }
 
 export default function Home() {
-  const [characterState, setCharacterState] = useState<Character | null>(null);
+  const [characterState, setCharacterState] = useState<Character | null>({
+    id: 1,
+    name: 'Rick Sanchez',
+    image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg'
+  });
 
   function loadRandomCharacterState(): void {
     const characterId = (characterState?.id === 1) ? 2 : 1;
